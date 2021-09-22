@@ -1,0 +1,102 @@
+This file contains all the api endpoints supported by this project.
+
+1 - Register User 
+    @POST - http://localhost:PORT/api/user/register
+    req.body{
+        email : "Your email",
+        passowrd : "Your passowrd",
+        name : "Your name",
+        phoneNumber : "Your phone number"
+    }
+    req.headers:{
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+
+    response:{ token : jsonwebtoken }
+
+2. - Login user 
+    @POST - http://localhost:PORT/api/user/login
+    req.body:{
+        email : "Your email",
+        passowrd : "Your password"
+    }
+    req.header:{
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+
+    response:{ token : jsonwebtoken }
+
+3. ResetPassword - User
+    @POST - http://localhost:8000/api/user/updatePassword
+    req.body:{
+        currentPassword: 'your current password', 
+        newPassword: 'your new password'
+    }
+    req.header:{
+        'Content-Type': 'application/x-www-form-urlencoded'
+        'Authorization' : 'Bearer jsonwebtoken'
+    }
+
+    response:{
+        message:"Success/Failure",
+        token: jsonwebtoken
+    }
+
+4. Delete User
+    @POST - http://localhost:8000/api/user/delete
+    req.body:{}
+    req.header:{
+        'Authorization': 'Bearer jsonwebtoken'
+    }
+
+    response:{"Deleted Successfully"}
+
+5. - Register Admin 
+    @POST - http://localhost:PORT/api/admin/register
+    req.body{
+        email : "Your email",
+        passowrd : "Your passowrd",
+        name : "Your name",
+    }
+    req.headers:{
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+
+    response:{ token : jsonwebtoken }
+
+6. - Login Admin 
+    @POST - http://localhost:PORT/api/admin/login
+    req.body:{
+        email : "Your email",
+        passowrd : "Your password"
+    }
+    req.header:{
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+
+    response:{ token : jsonwebtoken }
+
+7. ResetPassword - Admin
+    @POST - http://localhost:8000/api/admin/updatePassword
+    req.body:{
+        currentPassword: 'your current password', 
+        newPassword: 'your new password'
+    }
+    req.header:{
+        'Content-Type': 'application/x-www-form-urlencoded'
+        'Authorization' : 'Bearer jsonwebtoken'
+    }
+
+    response:{
+        message:"Success/Failure",
+        token: jsonwebtoken
+    }
+
+8. Delete User
+    @POST - http://localhost:8000/api/admin/delete
+    req.body:{}
+    req.header:{
+        'Authorization': 'Bearer jsonwebtoken'
+    }
+
+    response:{"Deleted Successfully"}
